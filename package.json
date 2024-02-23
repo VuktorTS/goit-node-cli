@@ -1,0 +1,11 @@
+{
+  "name": "goit-node-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/VuktorTS/goit-node-cli.git",
+  "author": "VuktorTS <136127912+VuktorTS@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.0.0"
+  }
+}
