@@ -12,10 +12,6 @@ program
   .option("-n, --name <type>", "user name")
   .option("-e, --email <type>", "user email")
   .option("-p, --phone <type>", "user phone");
-// node index.js -a list
-// node index.js -a get -i 05olLMgyVQdWRwgKfg5J6
-// node index.js -a add -n Mango -e mango @gmail.com -p 322 - 22 - 22
-// node index.js -a remove -i qdggE76Jtbfd9eWJHrssH
 program.parse();
 
 const options = program.opts();
@@ -34,11 +30,13 @@ async function invokeAction({ action, id, name, email, phone }) {
       break;
 
     case "add":
-      // ... name email phone
+      const newContact = await addContact({ name, email, phone });
+      return console.table(newContact);
       break;
 
     case "remove":
-      // ... id
+      const removedContact = await removeContact(id);
+      return console.table(removedContact);
       break;
 
     default:
